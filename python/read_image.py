@@ -9,12 +9,12 @@ class ReadImage():
     def __init__(self):
         self.__width = 0
         self.__height = 0
-        self.__bartOrangeShirt = 0
-        self.__bartBlueShorts = 0
-        self.__bartBlueShoe = 0
-        self.__homerBluePants = 0
-        self.__homerBrownMouth = 0
-        self.__homerGreyShoe = 0
+        self.__krustyHair = 0
+        self.__krustyTshirt = 0
+        self.__krustyFace = 0
+        self.__nedHair = 0
+        self.__nedTshirt = 0
+        self.__nedPants = 0
         self.__renderedImage = None
         self.__features = []
         self.__displayImage = False
@@ -53,45 +53,45 @@ class ReadImage():
         range = Range()
         b, g, r = pixel
 
-        if range.isBartOrangeShirt(r, g, b):
-            self.__bartOrangeShirt += 1
+        if range.isKrustyHair(r, g, b):
+            self.__krustyHair += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__bartOrangeShirt,
+                self.set_color(self.__krustyHair,
                                index_width, index_height)
 
-        if index_width > (self.__height / 2) and range.isBartBlueShorts(r, g, b):
-            self.__bartBlueShorts += 1
+        if index_width > (self.__height / 2) and range.isKrustyTshirt(r, g, b):
+            self.__krustyTshirt += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__bartBlueShorts,
+                self.set_color(self.__krustyTshirt,
                                index_width, index_height)
 
-        if index_width > (self.__height / 2 + self.__height / 3) and range.isBartShoe(r, g, b):
-            self.__bartBlueShoe += 1
+        if index_width > (self.__height / 2 + self.__height / 3) and range.isKrustyFace(r, g, b):
+            self.__krustyFace += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__bartBlueShoe, index_width, index_height)
+                self.set_color(self.__krustyFace, index_width, index_height)
 
-        if range.isHomerBluePants(r, g, b):
-            self.__homerBluePants += 1
+        if range.isNedHair(r, g, b):
+            self.__nedHair += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__homerBluePants,
+                self.set_color(self.__nedHair,
                                index_width, index_height)
 
-        if index_width < (self.__height / 2 + self.__height / 3) and range.isHomerMouth(r, g, b):
-            self.__homerBrownMouth += 1
+        if index_width < (self.__height / 2 + self.__height / 3) and range.isNedTshirt(r, g, b):
+            self.__nedTshirt += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__homerBrownMouth,
+                self.set_color(self.__nedTshirt,
                                index_width, index_height)
 
-        if index_width > (self.__height / 2 + self.__height / 3) and range.isHomerShoe(r, g, b):
-            self.__homerGreyShoe += 1
+        if index_width > (self.__height / 2 + self.__height / 3) and range.isNedPants(r, g, b):
+            self.__nedPants += 1
 
             if self.__displayImage == True:
-                self.set_color(self.__homerGreyShoe, index_width, index_height)
+                self.set_color(self.__nedPants, index_width, index_height)
 
     """
       TODO: estudar como associar uma variável recebida com o self
@@ -114,27 +114,27 @@ class ReadImage():
     def normalizeFeatures(self, img):
         Logger.log('Normalize Features')
 
-        self.__bartOrangeShirt = self.calcNormalize(self.__bartOrangeShirt)
-        self.__bartBlueShorts = self.calcNormalize(self.__bartBlueShorts)
-        self.__bartBlueShoe = self.calcNormalize(self.__bartBlueShoe)
-        self.__homerBluePants = self.calcNormalize(self.__homerBluePants)
-        self.__homerBrownMouth = self.calcNormalize(self.__homerBrownMouth)
-        self.__homerGreyShoe = self.calcNormalize(self.__homerGreyShoe)
+        self.__krustyHair = self.calcNormalize(self.__krustyHair)
+        self.__krustyTshirt = self.calcNormalize(self.__krustyTshirt)
+        self.__krustyFace = self.calcNormalize(self.__krustyFace)
+        self.__nedHair = self.calcNormalize(self.__nedHair)
+        self.__nedTshirt = self.calcNormalize(self.__nedTshirt)
+        self.__nedPants = self.calcNormalize(self.__nedPants)
 
-        bartOrHome = 0.0  # Bart
+        krustyOrNed = 0.0  # Krusty
         filename = os.path.basename(img)[0]
 
-        if filename == 'h':
-            bartOrHome = 1.0  # Homer
+        if filename == 'n':
+            krustyOrNed = 1.0  # Ned
 
         features = [
-            self.__bartOrangeShirt,
-            self.__bartBlueShorts,
-            self.__bartBlueShoe,
-            self.__homerBluePants,
-            self.__homerBrownMouth,
-            self.__homerGreyShoe,
-            bartOrHome
+            self.__krustyHair,
+            self.__krustyTshirt,
+            self.__krustyFace,
+            self.__nedHair,
+            self.__nedTshirt,
+            self.__nedPants,
+            krustyOrNed
         ]
 
         Logger.log(features)

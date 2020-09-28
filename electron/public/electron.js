@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
 const { PythonShell } = require("python-shell");
-let _dirname = path.resolve(path.dirname(''));
+let _dirname = path.resolve(path.dirname(""));
 // import installExtension, { REDUX_DEVTOOLS } from "electron-devtools-installer";
 // Or if you can not use ES6 imports
 const {
@@ -38,7 +38,7 @@ class Main {
     ipcMain.on("open-training", (event, args) => {
       let pyshell = new PythonShell("open_training.py", {
         mode: "text",
-        pythonPath: "python",
+        pythonPath: "python3",
         scriptPath: path.join(__dirname, "../../python"),
       });
 
@@ -53,7 +53,7 @@ class Main {
 
       let pyshell = new PythonShell("classify_image.py", {
         mode: "text",
-        pythonPath: "python",
+        pythonPath: "python3",
         args: [data],
         scriptPath: path.join(__dirname, "../../python"),
       });

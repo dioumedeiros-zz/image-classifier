@@ -150,18 +150,18 @@ class Classifier:
         accuracy = metrics.accuracy_score(
             y_test, predict) * 100
 
-        label = 'Bart'
+        label = 'Krusty'
         if prediction:
-            label = 'Homer'
+            label = 'Ned'
 
         print(json.dumps({
             'features': {
-                'Bart Orange T-Shirt': featuresFromImg[0],
-                'Bart Blue Shorts': featuresFromImg[1],
-                'Bart Shoes': featuresFromImg[2],
-                'Homer Blue Pants': featuresFromImg[3],
-                'Homer Mouth': featuresFromImg[4],
-                'Homer Shoes': featuresFromImg[5]
+                'Krusty hair': featuresFromImg[0],
+                'Krusty tshirt': featuresFromImg[1],
+                'Krusty face': featuresFromImg[2],
+                'Ned hair': featuresFromImg[3],
+                'Ned tshirt': featuresFromImg[4],
+                'Ned pants': featuresFromImg[5]
             },
             'prediction': {
                 'accuracy': accuracy,

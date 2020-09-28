@@ -8,13 +8,13 @@ class Weka():
     def __init__(self, images_directory):
         self.images_directory = images_directory
         self.header = '''@relation caracteristicas\n
-                         @attribute laranja_camisa_bart real
-                         @attribute azul_calcao_bart real
-                         @attribute azul_sapato_bart real
-                         @attribute marrom_boca_homer real
-                         @attribute azul_calca_homer real
-                         @attribute cinza_sapato_homer real
-                         @attribute classe {Bart, Homer}\n
+                         @attribute krusty_hair real
+                         @attribute krusty_tshirt real
+                         @attribute krusty_face real
+                         @attribute ned_hair real
+                         @attribute ned_tshirt real
+                         @attribute ned_pants real
+                         @attribute classe {Krusty, Ned}\n
                          @data\n
                       '''
         self.body = ''
@@ -37,17 +37,17 @@ class Weka():
             Logger.log(f'Extracting characteristics from {image}')
 
             features = ReadImage().read(f'{self.images_directory}/{image}')
-            features[6] = "Bart" if features[6] == 0.0 else "Homer"
+            features[6] = "Krusty" if features[6] == 0.0 else "Ned"
             imagesData.append(features)
 
             Logger.log(f'Data added to index {index}')
             Logger.log('Extracted Features:')
-            Logger.log(f'Bart Orange T-Shirt = {features[0]}')
-            Logger.log(f'Bart Blue Shorts = {features[1]}')
-            Logger.log(f'Bart Shoes = {features[2]}')
-            Logger.log(f'Homer Blue Pants = {features[3]}')
-            Logger.log(f'Homer Mouth = {features[4]}')
-            Logger.log(f'Homer Shoes = {features[5]}')
+            Logger.log(f'Krusty hair = {features[0]}')
+            Logger.log(f'Krusty tshirt = {features[1]}')
+            Logger.log(f'Krusty face = {features[2]}')
+            Logger.log(f'Ned hair = {features[3]}')
+            Logger.log(f'Ned tshirt = {features[4]}')
+            Logger.log(f'Ned pants = {features[5]}')
             Logger.log(f'Class = {features[6]}', True)
 
             self.body += ','.join(map(str, features)) + "\n"

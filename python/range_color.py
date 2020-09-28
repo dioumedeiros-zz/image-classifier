@@ -1,36 +1,39 @@
 class Range():
 
-    def isBartOrangeShirt(self, red, green, blue):
-        if 7 <= blue <= 90 and 70 <= green <= 105 and 200 <= red <= 255:
-            return True
-        return False
-
-    def isBartBlueShorts(self, red, green, blue):
-        if 170 >= blue >= 125 >= green >= 5 and 0 <= red <= 20:
+    def isKrustyHair(self, red, green, blue):
+        if 0 <= red <= 40 and 80 <= green <= 175 and 50 <= blue <= 185:
             return True
 
         return False
 
-    def isBartShoe(self, red, green, blue):
-        if 125 <= blue <= 140 and 3 <= green <= 12 and 5 <= red <= 20:
+    def isKrustyTshirt(self, red, green, blue):
+        if 107 <= red <= 200 and 50 <= green <= 180 and 105 <= blue <= 255:
             return True
 
         return False
 
-    def isHomerBluePants(self, red, green, blue):
-        if blue >= 150 and blue <= 180 and green >= 98 and green <= 120 and red >= 0 and red <= 90:
+    def isKrustyFace(self, red, green, blue):
+        if 215 <= red <= 255 and 200 <= green <= 255 and 120 <= blue <= 235:
             return True
 
         return False
 
-    def isHomerMouth(self, red, green, blue):
-        if 140 >= blue >= 95 <= green <= 185 and 175 <= red <= 200:
+    # WIERD THING
+
+    def isNedHair(self, red, green, blue):
+        if 0 <= blue <= 81 and 51 <= green <= 127 and 50 <= red <= 140:
             return True
 
         return False
 
-    def isHomerShoe(self, red, green, blue):
-        if 45 >= blue >= 25 <= green <= 45 and 25 <= red <= 45:
+    def isNedTshirt(self, red, green, blue):
+        if 20 <= red <= 75 and 50 <= green <= 148 and 10 <= blue <= 63:
+            return True
+
+        return False
+
+    def isNedPants(self, red, green, blue):
+        if 40 <= red <= 150 and 55 <= green <= 150 and 50 <= blue <= 150:
             return True
 
         return False
