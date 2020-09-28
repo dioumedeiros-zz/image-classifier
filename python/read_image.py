@@ -60,20 +60,20 @@ class ReadImage():
                 self.set_color(self.__krustyHair,
                                index_width, index_height)
 
-        if index_width > (self.__height / 2) and range.isKrustyTshirt(r, g, b):
+        if index_height < (self.__height / 2) and range.isKrustyTshirt(r, g, b):
             self.__krustyTshirt += 1
 
             if self.__displayImage == True:
                 self.set_color(self.__krustyTshirt,
                                index_width, index_height)
 
-        if index_width > (self.__height / 2 + self.__height / 3) and range.isKrustyFace(r, g, b):
+        if index_width > (self.__height / 2) and range.isKrustyFace(r, g, b):
             self.__krustyFace += 1
 
             if self.__displayImage == True:
                 self.set_color(self.__krustyFace, index_width, index_height)
 
-        if range.isNedHair(r, g, b):
+        if index_height < (self.__height / 2) and range.isNedHair(r, g, b):
             self.__nedHair += 1
 
             if self.__displayImage == True:

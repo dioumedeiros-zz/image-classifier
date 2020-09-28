@@ -7,13 +7,13 @@ class Range():
         return False
 
     def isKrustyTshirt(self, red, green, blue):
-        if 107 <= red <= 200 and 50 <= green <= 180 and 105 <= blue <= 255:
+        if 160 <= red <= 220 and 100 <= green <= 180 and 150 <= blue <= 200:
             return True
 
         return False
 
     def isKrustyFace(self, red, green, blue):
-        if 215 <= red <= 255 and 200 <= green <= 255 and 120 <= blue <= 235:
+        if 200 <= red <= 255 and 190 <= green <= 255 and 120 <= blue <= 235:
             return True
 
         return False
