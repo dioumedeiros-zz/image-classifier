@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const os = require("os");
 const isDev = require("electron-is-dev");
 const { PythonShell } = require("python-shell");
 let _dirname = path.resolve(path.dirname(""));
@@ -38,7 +39,7 @@ class Main {
     ipcMain.on("open-training", (event, args) => {
       let pyshell = new PythonShell("open_training.py", {
         mode: "text",
-        pythonPath: "python",
+        pythonPath: os.platform() === "linux" ? "python3" : "python",
         scriptPath: path.join(__dirname, "../../python"),
       });
 
@@ -53,7 +54,7 @@ class Main {
 
       let pyshell = new PythonShell("classify_image.py", {
         mode: "text",
-        pythonPath: "python",
+        pythonPath: os.platform() === "linux" ? "python3" : "python",
         args: [data],
         scriptPath: path.join(__dirname, "../../python"),
       });
