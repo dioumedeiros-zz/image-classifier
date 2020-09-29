@@ -38,7 +38,7 @@ class Main {
     ipcMain.on("open-training", (event, args) => {
       let pyshell = new PythonShell("open_training.py", {
         mode: "text",
-        pythonPath: "python3",
+        pythonPath: "python",
         scriptPath: path.join(__dirname, "../../python"),
       });
 
@@ -53,7 +53,7 @@ class Main {
 
       let pyshell = new PythonShell("classify_image.py", {
         mode: "text",
-        pythonPath: "python3",
+        pythonPath: "python",
         args: [data],
         scriptPath: path.join(__dirname, "../../python"),
       });

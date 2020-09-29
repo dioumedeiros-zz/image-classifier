@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-const primary = "#61dafb";
+const primary = "#47d3ad";
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: top;
-  height: 40px;
+  height: 65px;
   padding: 4px 6px 0px 6px;
   width: 100%;
   color: ${primary};
-  background-color: #282c34;
+  background-color: #303846;
   border-bottom: 1px solid ${primary};
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -33,6 +33,8 @@ export const NavButton = styled.button`
   line-height: 26px;
   font-size: 13px;
   color: ${primary};
+  border: ${`1px solid ${primary}`};
+  border-bottom: 0;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-radius: 4px 4px 0px 0px;

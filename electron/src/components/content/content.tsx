@@ -136,13 +136,7 @@ export default class Content extends React.Component<
         </LeftContent>
         <RightContent>
           <Feature data={features} />
-          {confusionMatrix ? (
-            <ImageMatrix src={confusionMatrix} />
-          ) : loading ? (
-            <MessageInfo>Realizando treinamento...</MessageInfo>
-          ) : (
-            <MessageInfo>Aguardando Treinamento</MessageInfo>
-          )}
+          {confusionMatrix && <ImageMatrix src={confusionMatrix} />}
         </RightContent>
       </ContentWrapper>
     );

@@ -18,7 +18,6 @@ const Feature: React.FC<Props> = ({ data }) => {
   });
 
   useEffect(() => {
-    console.log("data", data);
     if (data) {
       const parsedCharacteristics: any = Object.keys(data.features).map(
         (el: any) => ({
@@ -39,7 +38,7 @@ const Feature: React.FC<Props> = ({ data }) => {
         <header>Características</header>
         <S.Wrapper>
           <div>
-            <S.Subtitle>Bart</S.Subtitle>
+            <S.Subtitle>Krusty</S.Subtitle>
             <S.List>
               {characteristics.length > 0 &&
                 characteristics
@@ -52,7 +51,7 @@ const Feature: React.FC<Props> = ({ data }) => {
             </S.List>
           </div>
           <div>
-            <S.Subtitle>Homer</S.Subtitle>
+            <S.Subtitle>Ned</S.Subtitle>
             <S.List>
               {characteristics.length > 0 &&
                 characteristics
@@ -66,11 +65,16 @@ const Feature: React.FC<Props> = ({ data }) => {
           </div>
         </S.Wrapper>
 
-        <S.Wrapper style={{ marginTop: "15px" }}>
+        <S.Divider />
+
+        <header>Identificação do personagem</header>
+        <S.Wrapper>
           <div>
             <S.Subtitle>Predição</S.Subtitle>
             <S.List>
-              <S.ListItem>{predictionResult.accuracy}</S.ListItem>
+              <S.ListItem>
+                {predictionResult.accuracy.toPrecision(4)}%
+              </S.ListItem>
             </S.List>
           </div>
           <div>

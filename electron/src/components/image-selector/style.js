@@ -1,19 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ImageWrapper = styled.aside`
   display: block;
   width: 92%;
   margin: 50px auto 0px auto;
-  color: #61dafb;
+  color: #47d3ad;
   text-transform: uppercase;
   text-align: center;
   font-size: 14px;
   border-radius: 8px;
 
+  > div {
+    cursor: pointer;
+  }
+
   .dropzone {
     width: 100%;
     padding: 20px;
-    border: 1px dashed #61dafb;
+    border: 1px dashed #47d3ad;
   }
 `;
 
@@ -48,6 +52,6 @@ export const ImgStyle = styled.img`
   object-fit: contain;
   margin: 0px auto;
   text-align: center;
-  border: 1px solid #61dafb;
+  border: 1px solid #47d3ad;
   transition: all 0.2s ease-in-out;
 `;
