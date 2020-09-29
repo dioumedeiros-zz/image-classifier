@@ -22,4 +22,4 @@
 ## Matriz de confusão
 
 <img alt="atrix de confusao" src="./.github/confusion_matrix.jpg" />
-![](github/confusion_matrix.jpg)
+
