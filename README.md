@@ -2,9 +2,9 @@
     Aprendizado de máquinas
 </h1>
 
-<h2 align="center">
+<p align="center">
     Classificação de imagens
-</h2>
+</p>
 
 ## Personagens
 
