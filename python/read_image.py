@@ -28,10 +28,8 @@ class ReadImage():
         self.__height, self.__width, channels = image.shape
 
         if self.__displayImage == True:
-            Logger.log('Cloned image')
             self.__renderedImage = image.copy()
 
-        Logger.log('Handle width and height')
         for height in range(self.__height):
             for width in range(self.__width):
                 pixel = image[height, width]
@@ -43,11 +41,6 @@ class ReadImage():
             cv2.destroyAllWindows()
 
         return self.normalizeFeatures(img)
-
-    """
-      Receive a pixel (R, G, B) and call range_color.py
-      https://stackoverflow.com/questions/28981417/how-do-i-access-the-pixels-of-an-image-using-opencv-python/50588950
-    """
 
     def handleRangeColors(self, pixel, index_width, index_height):
         range = Range()
@@ -93,11 +86,6 @@ class ReadImage():
             if self.__displayImage == True:
                 self.set_color(self.__nedPants, index_width, index_height)
 
-    """
-      TODO: estudar como associar uma variável recebida com o self
-      Ex.: receber `variable` e associar self.variable += 1
-    """
-
     def set_color(self, variable, index_width, index_height):
         self.__renderedImage[index_height][index_width] = [0, 255, 128]
 
@@ -106,10 +94,6 @@ class ReadImage():
             return (value / (self.__width * self.__height)) * 100
 
         return 0.0
-
-    """
-      Normalizes the features by the number of total pixels of the image to % 
-    """
 
     def normalizeFeatures(self, img):
         Logger.log('Normalize Features')

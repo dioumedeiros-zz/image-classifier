@@ -18,8 +18,6 @@ class Range():
 
         return False
 
-    # WIERD THING
-
     def isNedHair(self, red, green, blue):
         if 0 <= blue <= 81 and 51 <= green <= 127 and 50 <= red <= 140:
             return True

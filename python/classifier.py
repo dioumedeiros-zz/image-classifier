@@ -64,7 +64,6 @@ class Classifier:
         else:
             self.confusion_matrix(model, X_test, y_test)
 
-    # https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py
     def confusion_matrix(self, model, x_test, y_test):
         title = "Matriz de confusão"
 
@@ -90,7 +89,7 @@ class Classifier:
         print(json.dumps(confusion_matrix))
 
     def confusion_matrix2(self, model, x_train, y_train):
-        # TODO: VERIFICAR PARAMETROS
+
         y_pred = model.predict(x_train)
         cf_matrix = metrics.confusion_matrix(y_train, y_pred)
 

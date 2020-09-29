@@ -10,5 +10,4 @@ if __name__ == "__main__":
 
     image = sys.argv[1]
 
-    # Predict image
     Classifier().classify(img=image)
