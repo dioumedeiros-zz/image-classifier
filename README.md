@@ -1,6 +1,6 @@
-<h1 align="center">
+<h2 align="center">
     Aprendizado de máquinas
-</h1>
+</h2>
 
 <p align="center">
     Classificação de imagens
