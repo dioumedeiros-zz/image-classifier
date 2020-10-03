@@ -6,6 +6,8 @@
     Classificação de imagens
 </p>
 
+![](.github/electron.png)
+
 ## Personagens
 
 - Krusty the clown
@@ -28,4 +30,3 @@
 ## Matriz de confusão
 
 <img alt="atrix de confusao" src="./.github/confusion_matrix.jpg" />
-
